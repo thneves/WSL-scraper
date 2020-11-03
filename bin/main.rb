@@ -19,16 +19,19 @@ while program_on
 
   if mode == '1'
     events = ScraperEvents.new
-    puts 'Type the name of the country to check WSL events(ex: south africa): '
+    puts 'Type the name of the country to check WSL events(ex: South Africa): '
     events.scraping
     country = gets.chomp.split.map(&:capitalize).join(' ')
     puts "These are the events around the year in #{country}: \n\n"
     events.format_info(events.brazil_events(country))
     program_on = false
   elsif mode == '2'
-    surfers = ScraperSurfer.new
-    system 'cls'
-    p surfers.surfers_list
+    surfer = ScraperSurfer.new
+    surfer.scraping
+    puts 'Type the name of the country to check WCT surfers: '
+    puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
+    country = gets.chomp.split.map(&:capitalize).join(' ')
+    surfer.format_info(surfer.surfers_filter, country)
   end
 
   puts 'Do you wanna start again? Y/N'
