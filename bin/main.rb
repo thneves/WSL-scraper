@@ -7,7 +7,7 @@ program_on = true
 
 while program_on
 
-  puts 'Welcome to the World Surf League Brazil scraper'
+  puts 'Welcome to the World Surf League scraper'
   puts "Type '1' to check all WSL events by country\nType '2' to check surfers by country in the Championship Tour"
 
   mode = gets.chomp
@@ -22,6 +22,7 @@ while program_on
     puts 'Type the name of the country to check WSL events(ex: South Africa): '
     events.scraping
     country = gets.chomp.split.map(&:capitalize).join(' ')
+    puts "\n"
     puts "These are the events around the year in #{country}: \n\n"
     events.format_info(events.brazil_events(country))
     program_on = false
@@ -32,6 +33,7 @@ while program_on
     puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
     country = gets.chomp.split.map(&:capitalize).join(' ')
     surfer.format_info(surfer.surfers_filter, country)
+    program_on = false
   end
 
   puts 'Do you wanna start again? Y/N'
@@ -42,6 +44,10 @@ while program_on
     reset = gets.chomp.upcase
   end
 
-  program_on = true if reset == 'Y'
+  if reset == 'Y'
+    system 'clear'
+    system 'cls'
+    program_on = true
+  end
   puts "Thanks for using WSL scraper!\nFor more info access: https://www.worldsurfleague.com/" if reset == 'N'
 end
