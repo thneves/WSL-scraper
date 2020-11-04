@@ -1,29 +1,21 @@
 require 'nokogiri'
-require 'httparty'
+require 'open-uri'
+require_relative '../lib/modules.rb'
+require_relative '../lib/scraper_init.rb'
 
-class ScraperSurfer
-  attr_reader :surfers, :text
+class ScraperSurfer < Scraper
+  include Formating
 
-  def initialize
-    @surfers = []
-    wsl_url = 'https://www.worldsurfleague.com/athletes/tour/mct?year=2020'
-    unparsed_page = HTTParty.get(wsl_url)
-    parsed_page = Nokogiri::HTML(unparsed_page)
-    card = parsed_page.css('td.athlete-headshot-and-name')
-    @text = card.css('div.avatar-text')
-  end
-
-  def surfers_list
-    @text.each do |element|
-      if element.text.include?('Brazil')
-        name = element.text.gsub('Brazil', '')
-        @surfers.push(name)
-      end
+  def surfers_filter
+    @total_list.each do |element|
+      @hash_info = {
+        ranking: element.css('td.athlete-rank').text,
+        name: element.css('a.athlete-name').text,
+        country: element.css('span.athlete-country-name').text,
+        detail_info: element.css('a.headshot').map { |link| link['href'] }
+      }
+      @final_list.push(@hash_info)
     end
-    @surfers
+    @final_list.sort_by! { |element| element[:ranking].to_i }
   end
 end
-
-brazil = ScraperSurfer.new
-
-puts brazil.surfers_list
