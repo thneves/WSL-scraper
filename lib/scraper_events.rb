@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/MethodLength
-
 require 'nokogiri'
 require 'open-uri'
 require_relative '../lib/modules.rb'
@@ -23,5 +21,3 @@ class ScraperEvents < Scraper
     @final_list
   end
 end
-
-# rubocop:enable Metrics/MethodLength
