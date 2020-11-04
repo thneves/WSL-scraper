@@ -21,5 +21,3 @@ class Scraper
     @total_list = even_list + odd_list
   end
 end
-
-hello = Scraper.new('https://www.worldsurfleague.com')
