@@ -23,7 +23,6 @@ while program_on
   if mode == '1'
     events = ScraperEvents.new(wsl_events)
     puts 'Type the name of the country to check WSL events(ex: South Africa): '
-    events.scraping
     country = gets.chomp.split.map(&:capitalize).join(' ')
     puts "\n"
     puts "These are the events around the year in #{country}: \n\n"
@@ -31,7 +30,6 @@ while program_on
     program_on = false
   elsif mode == '2'
     surfer = ScraperSurfer.new(wct_ranking)
-    surfer.scraping
     puts 'Type the name of the country to check WCT surfers: '
     puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
     country = gets.chomp.split.map(&:capitalize).join(' ')

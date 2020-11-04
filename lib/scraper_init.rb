@@ -8,8 +8,10 @@ class Scraper
     @final_list = []
     @hash_info = {}
     @url = url
-    @total_list = nil
+    @total_list = scraping
   end
+
+  private
 
   def scraping
     unparsed_page = URI.open(@url)
