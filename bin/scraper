@@ -6,6 +6,7 @@ require_relative '../lib/scraper_events.rb'
 
 program_on = true
 
+
 while program_on
 
   puts 'Welcome to the World Surf League scraper'
@@ -18,17 +19,20 @@ while program_on
     mode = gets.chomp.upcase
   end
 
+  wct_ranking = 'https://www.worldsurfleague.com/athletes/tour/mct?year=2020'
+  wsl_events = 'https://www.worldsurfleague.com/events'
+
   if mode == '1'
-    events = ScraperEvents.new
+    events = ScraperEvents.new(wsl_events)
     puts 'Type the name of the country to check WSL events(ex: South Africa): '
     events.scraping
     country = gets.chomp.split.map(&:capitalize).join(' ')
     puts "\n"
     puts "These are the events around the year in #{country}: \n\n"
-    events.format_events_info(events.brazil_events(country))
+    events.format_events_info(events.wsl_events(country))
     program_on = false
   elsif mode == '2'
-    surfer = ScraperSurfer.new
+    surfer = ScraperSurfer.new(wct_ranking)
     surfer.scraping
     puts 'Type the name of the country to check WCT surfers: '
     puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
