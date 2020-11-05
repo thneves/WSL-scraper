@@ -26,14 +26,16 @@ while program_on
     country = gets.chomp.split.map(&:capitalize).join(' ')
     puts "\n"
     puts "These are the events around the year in #{country}: \n\n"
-    events.format_events_info(events.wsl_events(country))
+    puts events.format_events_info(events.wsl_events(country))
     program_on = false
   elsif mode == '2'
     surfer = ScraperSurfer.new(wct_ranking)
     puts 'Type the name of the country to check WCT surfers: '
     puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
     country = gets.chomp.split.map(&:capitalize).join(' ')
-    surfer.format_surfers_info(surfer.surfers_filter, country)
+    puts "\n"
+    puts "World Championship Tour surfers from #{country}: \n\n"
+    puts surfer.format_surfers_info(surfer.surfers_filter, country)
     program_on = false
   end
 

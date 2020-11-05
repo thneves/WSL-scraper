@@ -16,7 +16,7 @@ describe Formating do
     end
 
     it 'returns an empty list' do
-      expect(test_surf_rank.format_surfers_info(surfer_info, 'Netherlands')).to be_a(Array)
+      expect(test_surf_rank.format_surfers_info(surfer_info, 'Netherlands')).to be_a(String)
     end
   end
 

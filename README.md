@@ -28,28 +28,33 @@ Gems:
 ## Live Demo
 
 [Live Demo Link](https://repl.it/@ThalesNeves/WSL-scraper#bin/main.rb)
-- type 'ruby main.rb' in repl terminal to run the program
+- type 'cd bin/' in  the repl.it terminal, then type'ruby main.rb' to run the program
 
 
 ### Prerequisites
 
-- Ruby
+- Ruby 
+- - [Install Ruby Here](https://www.ruby-lang.org/en/downloads/)
 - Linux (if you don't use linux use the live demo above)
 - Rspec
+- - **Type: *'gem install rspec'* in your terminal**
 
 ### Get started
+- Create a folder to download the program
+- - Option 1: You can click in the green button **Code** above use the **Download ZIP** option to download the files
+- - Option 2: Clone this repository to your computer. Open the terminal in the folder you create and paste this **git clone git@github.com:thneves/WSL-scraper.git**, now you have files you need.
 
-- Clone this repository to your computer, or you download the zip file containing the repository files.
 - Open the terminal in the respective folder.
-- Type 'gem install bundler' in the terminal.
-- Navigate to the folder where is the program is and type 'bundle install' to install the necessary gems to the program work.
-- Type 'scraper' in the terminal to run the program.
-- Follow the program instructions.
+- Type **gem install bundler** in the terminal and wait installation.
+- Type **'bundle install'** to install the packages to the program work.
+- Type **'cd /bin'** in the terminal to navigate to the file where you execute the program.
+- Type **ruby main.rb** to run the program
+- Follow the program instructions
 - Have Fun :surfer:
 
 ### Testing
 
-- To run the tests in the program type 'rspec' in the terminal inside the program folder
+- To run the tests in the program type **rspec** in the terminal inside the program folder
 
 ## Author
 
