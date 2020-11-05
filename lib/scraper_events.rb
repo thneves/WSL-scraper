@@ -11,7 +11,7 @@ class ScraperEvents < Scraper
 
   def wsl_events(country)
     @total_list.each do |element|
-      next unless element.css('span.event-schedule-details__location').text.include?(country)
+      next unless element.css('span.event-schedule-details__location').text.match?(country)
 
       @hash_info = {
         date: element.css('td.event-date-range').text, tour: element.css('span.event-tour-details__tour-name').text,
@@ -22,4 +22,5 @@ class ScraperEvents < Scraper
     end
     @final_list
   end
+  @final_list = 'None' if @final_list == []
 end
