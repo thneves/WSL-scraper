@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'nokogiri'
 require 'open-uri'
 require_relative '../lib/modules.rb'
 require_relative '../lib/scraper_init.rb'
 
+# class take wsl events info from nokogiri and store into an array of hashes
 class ScraperEvents < Scraper
   include Formating
 
@@ -11,10 +14,9 @@ class ScraperEvents < Scraper
       next unless element.css('span.event-schedule-details__location').text.include?(country)
 
       @hash_info = {
-        date: element.css('td.event-date-range').text,
+        date: element.css('td.event-date-range').text, tour: element.css('span.event-tour-details__tour-name').text,
         title: element.css('span.event-schedule-details__event-name').text,
-        location: element.css('span.event-schedule-details__location').text,
-        tour: element.css('span.event-tour-details__tour-name').text
+        location: element.css('span.event-schedule-details__location').text
       }
       @final_list.push(@hash_info)
     end

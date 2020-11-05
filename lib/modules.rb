@@ -1,5 +1,6 @@
-# module for methods of formating data from events or surf ranking
+# frozen_string_literal: true
 
+# module for methods of formating data from events or surf ranking
 module Formating
   def format_surfers_info(list, filter)
     puts "\n"
