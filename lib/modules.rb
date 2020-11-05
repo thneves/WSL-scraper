@@ -4,19 +4,23 @@
 module Formating
   def format_surfers_info(list, filter)
     count = 0
+    message = []
     list.each do |surfer|
       next unless surfer[:country] == filter
 
       count += 1
-      puts "WCT Rank: #{surfer[:ranking]}\nName: #{surfer[:name]}\nMore info #{surfer[:detail_info]}\n\n"
+      message.push("WCT Rank: #{surfer[:ranking]}\nName: #{surfer[:name]}\nMore info #{surfer[:detail_info]}\n\n")
     end
-    puts "No surfers from this country or is not even a country ;)\n\n" if count.zero?
+    message = "No surfers from this country or is not even a country ;)\n\n" if count.zero?
+    message
   end
 
   def format_events_info(info)
-    puts "No events in this country or this is not even a country ;)\n\n" if info == []
+    message = []
     info.each do |event|
-      puts "Date: #{event[:date]}\nEvent: #{event[:title]}\nLocation: #{event[:location]}\nTour: #{event[:tour]}\n\n"
+      message.push("Date: #{event[:date]}\nEvent: #{event[:title]}\nLocation: #{event[:location]}\nTour: #{event[:tour]}\n\n")
     end
+    message = "No events in this country or is not even a country ;)\n\n" if info.empty?
+    message
   end
 end
