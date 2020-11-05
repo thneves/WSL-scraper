@@ -34,6 +34,8 @@ while program_on
     puts 'Type the name of the country to check WCT surfers: '
     puts 'Available countries: Australia, Brazil, France, Japan, United States, Hawaii, Italy, South Africa, Portugal'
     country = gets.chomp.split.map(&:capitalize).join(' ')
+    puts "\n"
+    puts "World Championship Tour surfers from #{country}: \n\n"
     surfer.format_surfers_info(surfer.surfers_filter, country)
     program_on = false
   end
