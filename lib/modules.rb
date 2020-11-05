@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 # module for methods to formating data from events or surf ranking
 module Formating
