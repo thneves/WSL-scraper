@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 
+# Class Parent to initialize instance objects
 class Scraper
   attr_accessor :url, :final_list, :hash_info, :total_list
 
