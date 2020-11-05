@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 require_relative '../lib/scraper_surfers.rb'
 require_relative '../lib/scraper_events.rb'
 require_relative '../lib/modules.rb'
