@@ -3,7 +3,7 @@ require 'open-uri'
 require_relative '../lib/modules.rb'
 require_relative '../lib/scraper_init.rb'
 
-# class take wsl events info from nokogiri and store into an array of hashes
+# class inhereted from Superclass Scraper to  take wsl events info from nokogiri and store into an array of hashes
 class ScraperEvents < Scraper
   include Formating
 

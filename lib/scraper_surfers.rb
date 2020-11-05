@@ -3,7 +3,7 @@ require 'open-uri'
 require_relative '../lib/modules.rb'
 require_relative '../lib/scraper_init.rb'
 
-# class to get Nokogiri wct rank info and turn into an array of hashes
+# class inhereted from superclass Scraper to get Nokogiri wct rank info and turn into an array of hashes
 class ScraperSurfer < Scraper
   include Formating
 
