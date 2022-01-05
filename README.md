@@ -28,7 +28,7 @@ Gems:
 ## Live Demo
 
 [Live Demo Link](https://repl.it/@ThalesNeves/WSL-scraper#bin/main.rb)
-- type 'cd bin/' in  the repl.it terminal, then type'ruby main.rb' to run the program
+- type 'cd bin/' in  the repl.it terminal/shell, then type'ruby main.rb' to run the program
 
 
 ### Prerequisites
