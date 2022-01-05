@@ -18,7 +18,7 @@ while program_on
   end
 
   wct_ranking = 'https://www.worldsurfleague.com/athletes/tour/mct?year=2020'
-  wsl_events = 'https://www.worldsurfleague.com/events'
+  wsl_events = 'https://www.worldsurfleague.com/events?all=1&year=2022'
 
   if mode == '1'
     events = ScraperEvents.new(wsl_events)
